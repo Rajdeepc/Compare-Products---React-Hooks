@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { removeProductFromCompare } from './compare.action';
-import { ListGroup,Button } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 
 const ProductCompareList = (props) => {
 
@@ -13,18 +13,39 @@ const ProductCompareList = (props) => {
     }
 
     return (
-        <ListGroup>
-            <h4>Compare List</h4>
+        <div>
+        <h4>{prodArray.length ? 'Compare List' : ''}</h4>
+        <Row>
+           
             {prodArray.map((item, index) => {
                 return (
+                    <Col sm={3}>
+                        <Card>
+                            <div style={{ width: '10em', height: '10em', margin: '0 auto' }}>
+                                <img style={{ height: 'auto', maxWidth: '100%' }} src={item.image} />
+                            </div>
 
-                    <ListGroup.Item key={item.id}>
-                        {item.name}
-                        <Button variant="danger" onClick={() => removeItem(index)}>Remove From List</Button>
-                    </ListGroup.Item>)
+                            <Card.Body>
+                                <Card.Title>{item.name}</Card.Title>
+                                <Card.Text>
+                                    {item.description}
+                                </Card.Text>
+                                <Card.Text>
+                                   Price:  {item.price}
+                                </Card.Text>
+                                <Card.Text>
+                                   Condition {item.condition}
+                                </Card.Text>
+                                <Button
+                                    variant="danger" onClick={() => removeItem(index)}>Remove</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+
+                )
             })}
-
-        </ListGroup>
+        </Row>
+        </div>
     )
 }
 

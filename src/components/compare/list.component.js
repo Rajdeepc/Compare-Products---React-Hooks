@@ -24,6 +24,7 @@ const List = (props) => {
                 })}
 
             </Row>
+            <br/>
             <ProductCompareListComponent {...props} />
         </Container>
     )

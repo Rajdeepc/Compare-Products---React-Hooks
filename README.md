@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Product Comparison 
 
-## Available Scripts
+This project is built to help understand how to push, delete and compare 3 or more products with React Hooks, Redux and tests with Jest.
 
-In the project directory, you can run:
+#### Live - 
 
-### `npm start`
+### Project Description:
+ * Product Item:
+    - Each Item rendered from a JSON which can be compared with the others
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* Comapare Item Page: 
+    - Product Added to this page for comparison and can be deleted to remove from comparison
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Getting Started
+To get you started you can simply clone the repository:
 
-### `npm test`
+```
+git clone https://github.com/Rajdeepc/Compare-Products---React-Hooks.git
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+You need git to clone the repository. You can get git from
+[http://git-scm.com/](http://git-scm.com/).
 
-### `npm run build`
+A number of node.js tools is necessary to initialize and test the project. You must have node.js and its package manager (npm) installed. You can get them from  [http://nodejs.org/](http://nodejs.org/).
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+and install the dependencies
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Lint & Build
 
-### `npm run eject`
+```sh
+npm run lint
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running the tests
+```
+npm test
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Run in Local
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To Run Locally Steps to follow:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm start
 
-## Learn More
+```
+### Built With
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* [React js](https://github.com/facebook/react/)
+* [React Bootstrap](https://react-bootstrap.github.io/)
+* [Redux](https://github.com/reduxjs/redux)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Create a branch
 
-### Analyzing the Bundle Size
+1. `git checkout master` from any folder in your local `https://github.com/Rajdeepc/Compare-Products---React-Hooks.git` repository
+1. `git pull origin master` to ensure you have the latest main code
+1. `git checkout -b the-name-of-my-branch` (replacing `the-name-of-my-branch` with a suitable name) to create a branch
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Make the change
 
-### Making a Progressive Web App
+1. Follow the "Running locally" instructions
+1. Save the files and check in the browser
+  1. Changes to React components in `src` will hot-reload
+  1. Changes to markdown files in `content` will hot-reload
+  1. If working with plugins, you may need to remove the `.cache` directory and restart the server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+### Push it
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+1. `git add -A && git commit -m "My message"` (replacing `My message` with a commit message, such as `Fixed header logo`) to stage and commit your changes
+1. `git push my-fork-name the-name-of-my-branch`
+1. Go to the [Compare-Products---React-Hooks](https://github.com/Rajdeepc/Compare-Products---React-Hooks.git) and you should see recently pushed branches.
+1. Follow GitHub's instructions.
+1. If possible, include screenshots of visual changes. A Netlify build will also be automatically created once you make your PR so other people can see your change.
 
-### Deployment
+### Some Glimpses:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
