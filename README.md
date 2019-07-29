@@ -2,7 +2,7 @@
 
 This project is built to help understand how to push, delete and compare 3 or more products with React Hooks, Redux and tests with Jest.
 
-#### Live - 
+#### Live - https://compare-products.netlify.com/
 
 ### Project Description:
  * Product Item:
