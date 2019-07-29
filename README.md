@@ -83,8 +83,8 @@ npm start
 1. Follow GitHub's instructions.
 1. If possible, include screenshots of visual changes. A Netlify build will also be automatically created once you make your PR so other people can see your change.
 
-### Some Glimpses:
+### Compare Page:
 
-
+![Compare](compare.png)
 
 
