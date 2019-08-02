@@ -2,7 +2,7 @@ import { GET_ALL_ITEMS, OPEN_COMPARE_LIST, ADD_PRODUCT_TO_COMPARE, REMOVE_PRODUC
 import axios from 'axios';
 
 const loadItemData = () => dispatch => {
-    return axios.get('http://demo6727947.mockable.io/dummyCompare')
+    return axios.get('https://demo6727947.mockable.io/dummyCompare')
     .then((response) => {
         dispatch({
             type: GET_ALL_ITEMS,
