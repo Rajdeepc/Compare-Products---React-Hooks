@@ -4,81 +4,106 @@ import { loadItemData, openCompareList, addProductToCompare, removeProductFromCo
 
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import MockAdapter from 'axios-mock-adapter';
+import axios from 'axios';
+
 
 const middlewares = [thunk];
+
 const mockStore = configureStore(middlewares);
-import MockAdapter  from 'axios-mock-adapter';
-import axios from 'axios';
+
 const mock = new MockAdapter(axios);
+
 const store = mockStore({});
 
 
-
-const DummyData = [
-    {
-        "id": "1",
-        "name": "Cherry",
-        "image": "https://image.shutterstock.com/image-photo/cherry-isolated-on-white-background-260nw-200523716.jpg",
-        "price": "$1.99",
-        "colors": ["red", "green", "blue"],
-        "condition": "Fresh",
-        "description": "Two Cherries"
-    },
-    {
-        "id": "2",
-        "name": "Orange",
-        "image": "https://media.gettyimages.com/photos/orange-picture-id185284489?s=612x612",
-        "price": "$2.99",
-        "colors": ["green", "blue"],
-        "condition": "Frozen",
-        "description": "Giant Orange"
-    },
-    {
-        "id": "3",
-        "name": "Nuts",
-        "image": "https://nuts.com/images/auto/801x534/assets/11e396e470741b57.jpg",
-        "price": "$1.00",
-        "colors": ["red"],
-        "condition": "Frozen",
-        "description": "Mixed Nuts"
-    },
-    {
-        "id": "4",
-        "name": "Strawberry",
-        "image": "https://images.pexels.com/photos/934066/pexels-photo-934066.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-        "price": "$1.49",
-        "colors": ["blue"],
-        "condition": "Fresh",
-        "description": "Just Strawberry"
-    }
-]
-
-
-
 describe('Testing loadItemData()', () => {
-  
+
     beforeEach(() => { // Runs before each test in the suite
         store.clearActions();
     });
-    it('should get ALL_ITEMS',  () => {
+    it('should get ALL_ITEMS', () => {
         mock.onGet('/users').reply(200, {
             data: [
-              { id: 1, name: 'John Smith' }
+                { id: 1, name: 'John Smith' }
             ]
-          });
-        
-         store.dispatch(loadItemData()).then(() => {
+        });
+
+        store.dispatch(loadItemData()).then(() => {
             let expectedActions = [{
                 type: GET_ALL_ITEMS,
                 payload: {
                     data: [
                         { id: 1, name: 'John Smith' }
-                      ]
+                    ]
                 }
-              }]
+            }]
             expect(store.getActions()).toEqual(expectedActions);
-        })
-       
-
-    })
+        });
+    });
 })
+
+
+describe('testing openCompareList()', () => {
+    beforeEach(() => { // Runs before each test in the suite
+        store.clearActions();
+    });
+
+    it('should open OPEN_COMPARE_LIST', () => {
+        const expectedActions = [{
+            type: OPEN_COMPARE_LIST,
+            payload: true
+        }]
+        store.dispatch(openCompareList());
+        expect(store.getActions()).toEqual(expectedActions);
+    })
+});
+
+describe('testing addProductToCompare()', () => {
+    beforeEach(() => { // Runs before each test in the suite
+        store.clearActions();
+    });
+
+    it('should pass ADD_PRODUCT_TO_COMPARE', () => {
+        const expectedActions = [{
+            type: ADD_PRODUCT_TO_COMPARE,
+            payload: {
+                compareObj: 'test'
+            }
+        }]
+        store.dispatch(addProductToCompare('test'));
+        expect(store.getActions()).toEqual(expectedActions);
+    })
+});
+
+describe('testing removeProductFromCompare()', () => {
+    beforeEach(() => { // Runs before each test in the suite
+        store.clearActions();
+    });
+
+    it('should pass REMOVE_PRODUCT_FROM_COMPARE', () => {
+        const expectedActions = [{
+            type: REMOVE_PRODUCT_FROM_COMPARE,
+            payload: {
+                itemToRemove: 0
+            }
+        }]
+        store.dispatch(removeProductFromCompare(0));
+        expect(store.getActions()).toEqual(expectedActions);
+    })
+});
+
+
+describe('testing clearCompareList()', () => {
+    beforeEach(() => { // Runs before each test in the suite
+        store.clearActions();
+    });
+
+    it('should pass CLEAR_COMPARE', () => {
+        const expectedActions = [{
+            type: CLEAR_COMPARE
+        }]
+        store.dispatch(clearCompareList());
+        expect(store.getActions()).toEqual(expectedActions);
+    })
+});
