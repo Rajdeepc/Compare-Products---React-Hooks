@@ -14,7 +14,7 @@ const CompareReducer = (state= INITIAL_STATE, action ) => {
         case GET_ALL_ITEMS:
             return {
                 ...state,
-                itemDataArray : action.payload
+                itemDataArray : action.payload.data
             }
         case OPEN_COMPARE_LIST:
             return {

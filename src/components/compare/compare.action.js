@@ -1,12 +1,19 @@
 import { GET_ALL_ITEMS, OPEN_COMPARE_LIST, ADD_PRODUCT_TO_COMPARE, REMOVE_PRODUCT_FROM_COMPARE, CLEAR_COMPARE } from './compare.types';
-import {PlantList} from  '../../constants/dummyJson';
-
+import axios from 'axios';
 
 const loadItemData = () => dispatch => {
-    dispatch({
-        type: GET_ALL_ITEMS,
-        payload: PlantList
+    return axios.get('http://demo6727947.mockable.io/dummyCompare')
+    .then((response) => {
+        dispatch({
+            type: GET_ALL_ITEMS,
+            payload: {
+                data: response.data
+            }
+        })
+    }).catch(error => {
+        console.log("Error" + error);
     })
+    
 }
 
 const openCompareList = () => dispatch => {
