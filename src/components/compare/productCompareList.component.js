@@ -40,7 +40,7 @@ const ProductCompareList = (props) => {
 
     return (
         <div>
-            <h4>{prodArray.length ? 'Compare List' : ''}</h4>
+            <h4>{compareArray.length ? 'Compare List' : ''}</h4>
             <Row>
                 {popImageAndPushItem().map((item, index) => {
                     return (
