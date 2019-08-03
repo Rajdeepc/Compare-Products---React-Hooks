@@ -28,4 +28,27 @@ describe('Testing CompareReducer', () => {
             ]
         })
     })
+
+    it('should test OPEN_COMPARE_LIST', () => {
+        const startAction = {
+            type: OPEN_COMPARE_LIST,
+            payload: true
+        }
+
+        expect(CompareReducer( {}, startAction)).toEqual({
+            shouldCompareListOpen:true
+        })
+    })
+
+    it('should test CLEAR_COMPARE', () => {
+        const startAction = {
+            type: CLEAR_COMPARE
+        }
+
+        expect(CompareReducer( {}, startAction)).toEqual({
+            shouldCompareListOpen:false,
+            compareArray:[]
+        })
+    })
+
 })
