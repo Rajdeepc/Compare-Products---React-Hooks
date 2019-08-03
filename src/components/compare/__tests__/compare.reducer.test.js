@@ -12,22 +12,20 @@ describe('Testing CompareReducer', () => {
         )
     })
 
-    // it('should test GET_ALL_ITEMS', () => {
-    //     const startAction = {
-    //         type: GET_ALL_ITEMS,
-    //         data: [
-    //             { id: 1, name: 'John Smith' }
-    //         ]
-    //     }
+    it('should test GET_ALL_ITEMS', () => {
+        const startAction = {
+            type: GET_ALL_ITEMS,
+            payload: {
+                data: [
+                    { id: 1, name: 'John Smith' }
+                ]
+            }
+        }
 
-    //     expect(HomeReducer({}, startAction)).toEqual({
-    //         itemDataArray:[]
-    //     })
-
-    //     expect(HomeReducer( {itemDataArray:[]}, startAction)).toEqual({
-    //         data: [
-    //             { id: 1, name: 'John Smith' }
-    //         ]
-    //     })
-    // })
+        expect(CompareReducer( {}, startAction)).toEqual({
+            itemDataArray: [
+                { id: 1, name: 'John Smith' }
+            ]
+        })
+    })
 })
