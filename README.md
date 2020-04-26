@@ -88,3 +88,6 @@ npm start
 ![Compare](compare.png)
 
 
+If you would like to donate to this project so that i can give dedicated time to scale this below is the link:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](rajrock38@gmail.com)
